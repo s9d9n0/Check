@@ -35,8 +35,7 @@ app.get('/api/agents',function(req,res){
     const { query: {attr,value},  } = req;
     //const valuelow = req.query.value.toLowerCase();
     if (!attr && !value) return res.send(tableAgents);
-    if (attr && value) {
-        return res.send(
+    if (attr && value) return res.send(
         tableAgents.filter((agent)=>agent[attr].includes(value))
     );
 });
