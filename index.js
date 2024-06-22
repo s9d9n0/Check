@@ -17,9 +17,9 @@ app.get('/',function(req,res){
     res.send('Hello World');
 });
 
-app.get('/api/agents',function(req,res){
-    res.send(tableAgents);
-});
+// app.get('/api/agents',function(req,res){
+//     res.send(tableAgents);
+// });
 
 app.get('/api/agents/:prenom',function(req,res){
     console.log(req.params);
@@ -32,10 +32,12 @@ app.get('/api/agents/:prenom',function(req,res){
 
 app.get('/api/agents',function(req,res){
     console.log(req.query);
-    const {query : {filter,value},} = req;
-    if (!filter && !value) return res.send(tableAgents);
-    if (filter && value) return res.send(
-        tableAgents.filter((agent)=>agent[filter].includes(value))
+    const { query: {attr,value},  } = req;
+    //const valuelow = req.query.value.toLowerCase();
+    if (!attr && !value) return res.send(tableAgents);
+    if (attr && value) {
+        return res.send(
+        tableAgents.filter((agent)=>agent[attr].includes(value))
     );
 });
 
