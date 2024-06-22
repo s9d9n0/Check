@@ -30,6 +30,15 @@ app.get('/api/agents/:prenom',function(req,res){
     return res.send(resultPrenom);
 });
 
+app.get('/api/agents',function(req,res){
+    console.log(req.query);
+    const {query : {attr,value}} = req;
+    if (!attr && !value) return res.send(tableAgents);
+    if (attr && value) return res.send(
+        tableAgents.filter((agent)=>agent[attr].includes(value))
+    );
+});
+
 
 // app.get('/checkInsee',async function makeRequest() {
 //     try {
