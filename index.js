@@ -19,6 +19,21 @@ app.get('/api/agents',function(req,res){
     ]);
 });
 
+
+async function makeRequest() {
+    try {
+      const response = await fetch('https://www.insee.fr/fr/accueil');
+  
+      console.log('response.status: ', response.status); // 👉️ 200
+      console.log(response);
+    } catch (err) {
+      console.log(err);
+    }
+  }
+  
+  makeRequest();
+
+
 app.listen(3000, function(){
     console.log('Server started on port 3000');
 });
