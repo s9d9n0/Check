@@ -31,7 +31,7 @@ app.get('/checkInsee',async function makeRequest() {
     }
   });
   
-  makeRequest();
+
 
 
 app.listen(3000, function(){
