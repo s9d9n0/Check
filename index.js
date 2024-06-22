@@ -32,10 +32,10 @@ app.get('/api/agents/:prenom',function(req,res){
 
 app.get('/api/agents',function(req,res){
     console.log(req.query);
-    const {query : {attr,value},} = req;
-    if (!attr && !value) return res.send(tableAgents);
-    if (attr && value) return res.send(
-        tableAgents.filter((agent)=>agent[attr].includes(value))
+    const {query : {filter,value},} = req;
+    if (!filter && !value) return res.send(tableAgents);
+    if (filter && value) return res.send(
+        tableAgents.filter((agent)=>agent[filter].includes(value))
     );
 });
 
