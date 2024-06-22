@@ -20,7 +20,7 @@ app.get('/api/agents',function(req,res){
 });
 
 
-async function makeRequest() {
+app.get('/checkInsee',async function makeRequest() {
     try {
       const response = await fetch('https://www.insee.fr/fr/accueil');
   
@@ -29,7 +29,7 @@ async function makeRequest() {
     } catch (err) {
       console.log(err);
     }
-  }
+  });
   
   makeRequest();
 
