@@ -11,6 +11,8 @@ const tableAgents = [
     {div:"gepex",nom:"PELLETIER",prenom:"Frédéric"},
     {div:"gepex",nom:"PINAULT",prenom:"Jean-Baptiste"},
     {div:"gepex",nom:"VILAIN",prenom:"Frédéric"},
+    {div:"cugid",nom:"COLOMBEL",prenom:"Yannick"},
+    {div:"cugid",nom:"BURGESS",prenom:"Jean-Marie"},
 ]
 
 app.get('/',function(req,res){
